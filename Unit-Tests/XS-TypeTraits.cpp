@@ -27,6 +27,9 @@
  * @brief       Test case XS::TypeTraits
  */
 
+#include <clang-warnings.h>
+#include <XS/TypeTraits.hpp>
+
 /* Disabled warnings for GoogleMock */
 #ifdef __clang__
 #pragma clang diagnostic ignored "-Wglobal-constructors"
@@ -46,8 +49,6 @@
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-
-#include <XS/TypeTraits.hpp>
 
 using namespace testing;
 

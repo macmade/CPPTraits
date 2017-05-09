@@ -60,7 +60,6 @@
 		053BEDB51B8EFDE6007D82A4 /* GoogleMock.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GoogleMock.xcodeproj; path = "Submodules/gmock-xcode/GoogleMock.xcodeproj"; sourceTree = "<group>"; };
 		053BEDC71B8EFE1E007D82A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		053BEDE71B90ABB2007D82A4 /* travis-after.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "travis-after.sh"; sourceTree = "<group>"; };
-		053BEDF91B90B37E007D82A4 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		056D31EF1C20304F000E1219 /* TypeTraits.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TypeTraits.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,7 +89,6 @@
 			children = (
 				051F9C771C19C3EE005D471A /* XS-TypeTraits.cpp */,
 				053BEDC71B8EFE1E007D82A4 /* Info.plist */,
-				053BEDF91B90B37E007D82A4 /* Prefix.pch */,
 			);
 			path = "Unit-Tests";
 			sourceTree = "<group>";
@@ -306,9 +304,10 @@
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Unit-Tests/Prefix.pch";
-				HEADER_SEARCH_PATHS = CPPTraits/include/;
+				HEADER_SEARCH_PATHS = (
+					CPPTraits/include/,
+					Submodules/SeriousCode/,
+				);
 				INFOPLIST_FILE = "Unit-Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xs-labs.CPPTraits-Tests";
@@ -325,9 +324,10 @@
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Unit-Tests/Prefix.pch";
-				HEADER_SEARCH_PATHS = CPPTraits/include/;
+				HEADER_SEARCH_PATHS = (
+					CPPTraits/include/,
+					Submodules/SeriousCode/,
+				);
 				INFOPLIST_FILE = "Unit-Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xs-labs.CPPTraits-Tests";
