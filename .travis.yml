@@ -1,7 +1,23 @@
 language: objective-c
+cache:
+    directories:
+    - $HOME/.ccache
+install:
+- gem install xcpretty
+- brew install ccache
+- PATH=$PATH:/usr/local/opt/ccache/libexec
+- brew install macmade/tap/xcode-coveralls
+- export PYTHONUSERBASE=~/.local
+- easy_install --user scan-build
 script:
-- xctool -project "CPPTraits.xcodeproj" -scheme "CPPTraits-Tests" test
-before_install:
-- bash Scripts/travis-before.sh
+- set -o pipefail && xcodebuild -project "CPPTraits.xcodeproj" -scheme "CPPTraits-Tests" build test | xcpretty
+- set -o pipefail && scan-build --status-bugs xcodebuild -project "CPPTraits.xcodeproj" -scheme "CPPTraits-Tests"" analyze | xcpretty
+before_script:
+- ccache -s
+- ccache -z
+after_script:
+- ccache -s
 after_success:
 - bash Scripts/travis-after.sh
+notifications:
+    slack: xs-labs:FXh1yLXNkpcVxKZhZU6icdhI
