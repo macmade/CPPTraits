@@ -11,7 +11,7 @@ install:
 - easy_install --user scan-build
 script:
 - set -o pipefail && xcodebuild -project "CPPTraits.xcodeproj" -scheme "CPPTraits-Tests" build test | xcpretty
-- set -o pipefail && scan-build --status-bugs xcodebuild -project "CPPTraits.xcodeproj" -scheme "CPPTraits-Tests"" analyze | xcpretty
+- set -o pipefail && scan-build --status-bugs xcodebuild -project "CPPTraits.xcodeproj" -scheme "CPPTraits-Tests" analyze | xcpretty
 before_script:
 - ccache -s
 - ccache -z
