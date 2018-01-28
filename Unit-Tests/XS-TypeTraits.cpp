@@ -27,7 +27,6 @@
  * @brief       Test case XS::TypeTraits
  */
 
-#include <clang-warnings.h>
 #include <XS/TypeTraits.hpp>
 
 /* Disabled warnings for GoogleMock */
