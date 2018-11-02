@@ -27,7 +27,14 @@
  * @brief       Test case XS::TypeTraits
  */
 
+
 #include <XS/TypeTraits.hpp>
+
+#ifdef _WIN32
+
+#include <gtest/gtest.h>
+
+#else
 
 /* Disabled warnings for GoogleMock */
 #ifdef __clang__
@@ -47,6 +54,8 @@
 
 #ifdef __clang__
 #pragma clang diagnostic pop
+#endif
+
 #endif
 
 using namespace testing;

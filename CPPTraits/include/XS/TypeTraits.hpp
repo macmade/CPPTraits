@@ -32,42 +32,42 @@
 
 #include <type_traits>
 
-#define XS_TYPE_TRAITS_DEF_HAS_PUBLIC_METHOD( _N_, _F_ )                                                    \
-    template< typename _T_, typename _R_, typename ... _A_ >                                                \
-    class _N_                                                                                               \
-    {                                                                                                       \
-        private:                                                                                            \
-                                                                                                            \
-            struct _Y { char _[ 1 ]; };                                                                     \
-            struct _N { char _[ 2 ]; };                                                                     \
-                                                                                                            \
-            template< typename _U_, _U_ > struct _S;                                                        \
-                                                                                                            \
-            template< typename _C_ > static _Y & _T( _S< _R_ ( _C_::* )( _A_ ... ), &_C_::_F_ > * );        \
-            template< typename _C_ > static _N & _T( ... );                                                 \
-                                                                                                            \
-        public:                                                                                             \
-                                                                                                            \
-            enum { value = sizeof( _T< _T_ >( 0 ) ) == sizeof( _Y ) };                                      \
+#define XS_TYPE_TRAITS_DEF_HAS_PUBLIC_METHOD( _N_, _F_ )                                                        \
+    template< typename _T_, typename _R_, typename ... _A_ >                                                    \
+    class _N_                                                                                                   \
+    {                                                                                                           \
+        private:                                                                                                \
+                                                                                                                \
+            struct _Y { char _[ 1 ]; };                                                                         \
+            struct _N { char _[ 2 ]; };                                                                         \
+                                                                                                                \
+            template< typename _U_, _U_ > struct _S;                                                            \
+                                                                                                                \
+            template< typename _C_ > static _Y & _T( _S< _R_ ( _C_::* )( _A_ ... ), ( &_C_::_F_ ) > * );        \
+            template< typename _C_ > static _N & _T( ... );                                                     \
+                                                                                                                \
+        public:                                                                                                 \
+                                                                                                                \
+            enum { value = sizeof( _T< _T_ >( 0 ) ) == sizeof( _Y ) };                                          \
     }
 
-#define XS_TYPE_TRAITS_DEF_HAS_PUBLIC_CONST_METHOD( _N_, _F_ )                                              \
-    template< typename _T_, typename _R_, typename ... _A_ >                                                \
-    class _N_                                                                                               \
-    {                                                                                                       \
-        private:                                                                                            \
-                                                                                                            \
-            struct _Y { char _[ 1 ]; };                                                                     \
-            struct _N { char _[ 2 ]; };                                                                     \
-                                                                                                            \
-            template< typename _U_, _U_ > struct _S;                                                        \
-                                                                                                            \
-            template< typename _C_ > static _Y & _T( _S< _R_ ( _C_::* )( _A_ ... ) const, &_C_::_F_ > * );  \
-            template< typename _C_ > static _N & _T( ... );                                                 \
-                                                                                                            \
-        public:                                                                                             \
-                                                                                                            \
-            enum { value = sizeof( _T< _T_ >( 0 ) ) == sizeof( _Y ) };                                      \
+#define XS_TYPE_TRAITS_DEF_HAS_PUBLIC_CONST_METHOD( _N_, _F_ )                                                  \
+    template< typename _T_, typename _R_, typename ... _A_ >                                                    \
+    class _N_                                                                                                   \
+    {                                                                                                           \
+        private:                                                                                                \
+                                                                                                                \
+            struct _Y { char _[ 1 ]; };                                                                         \
+            struct _N { char _[ 2 ]; };                                                                         \
+                                                                                                                \
+            template< typename _U_, _U_ > struct _S;                                                            \
+                                                                                                                \
+            template< typename _C_ > static _Y & _T( _S< _R_ ( _C_::* )( _A_ ... ) const, ( &_C_::_F_ ) > * );  \
+            template< typename _C_ > static _N & _T( ... );                                                     \
+                                                                                                                \
+        public:                                                                                                 \
+                                                                                                                \
+            enum { value = sizeof( _T< _T_ >( 0 ) ) == sizeof( _Y ) };                                          \
     }
 
 namespace XS
