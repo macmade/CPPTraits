@@ -1,7 +1,8 @@
 CPPTraits
 =========
 
-[![Build Status](https://img.shields.io/travis/macmade/CPPTraits.svg?branch=master&style=flat)](https://travis-ci.org/macmade/CPPTraits)
+[![Build-Travis](https://img.shields.io/travis/macmade/CPPTraits.svg?branch=master&logo=travis&style=flat)](https://travis-ci.org/macmade/CPPTraits)
+[![Build-AppVeyor](https://ci.appveyor.com/api/projects/status/github/macmade/CPPTraits?svg=true)](https://ci.appveyor.com/project/macmade/CPPTraits)
 [![Coverage Status](https://img.shields.io/coveralls/macmade/CPPTraits.svg?branch=master&style=flat)](https://coveralls.io/r/macmade/CPPTraits?branch=master)
 [![Issues](http://img.shields.io/github/issues/macmade/CPPTraits.svg?style=flat)](https://github.com/macmade/CPPTraits/issues)
 ![Status](https://img.shields.io/badge/status-active-brightgreen.svg?style=flat)
