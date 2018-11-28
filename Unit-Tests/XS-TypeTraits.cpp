@@ -28,6 +28,7 @@
  */
 
 #define XSTEST_GTEST_COMPAT
+#define XS_TEST_MAIN
 #include <XSTest/XSTest.hpp>
 #include <XS/TypeTraits.hpp>
 
