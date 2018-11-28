@@ -6,6 +6,8 @@ platform:
 configuration:
   - Debug
   - Release
+install:
+  - git submodule update --init --recursive
 build:
   project: CPPTraits.sln
 before_build:
