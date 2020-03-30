@@ -48,7 +48,7 @@
                                                                                                                 \
         public:                                                                                                 \
                                                                                                                 \
-            enum { value = sizeof( _T< _T_ >( 0 ) ) == sizeof( _Y ) };                                          \
+            enum { value = sizeof( _T< _T_ >( nullptr ) ) == sizeof( _Y ) };                                    \
     }
 
 #define XS_TYPE_TRAITS_DEF_HAS_PUBLIC_CONST_METHOD( _N_, _F_ )                                                  \
@@ -67,7 +67,7 @@
                                                                                                                 \
         public:                                                                                                 \
                                                                                                                 \
-            enum { value = sizeof( _T< _T_ >( 0 ) ) == sizeof( _Y ) };                                          \
+            enum { value = sizeof( _T< _T_ >( nullptr ) ) == sizeof( _Y ) };                                    \
     }
 
 namespace XS
