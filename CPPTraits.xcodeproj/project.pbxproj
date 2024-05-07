@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		050B83E11EB917D90090EA12 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 050B83E01EB917D90090EA12 /* libc++.tbd */; };
 		051F9C7D1C19C3EE005D471A /* XS-TypeTraits.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 051F9C771C19C3EE005D471A /* XS-TypeTraits.cpp */; };
 		0536381021AF346A0015CFA9 /* XSTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0536380F21AF345D0015CFA9 /* XSTest.framework */; };
 		053BEDEC1B90ABB2007D82A4 /* travis-after.sh in Resources */ = {isa = PBXBuildFile; fileRef = 053BEDE71B90ABB2007D82A4 /* travis-after.sh */; };
@@ -88,7 +87,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0536381021AF346A0015CFA9 /* XSTest.framework in Frameworks */,
-				050B83E11EB917D90090EA12 /* libc++.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,7 +313,7 @@
 		05BD894A1A13FF4700A43CD8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1530;
 				ORGANIZATIONNAME = "XS-Labs";
 				TargetAttributes = {
 					053BEDAB1B8EFDC1007D82A4 = {
@@ -373,6 +371,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		053BEDF51B90AC06007D82A4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -382,7 +381,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export | egrep '(BUILT_PRODUCTS_DIR)|(CURRENT_ARCH)|(OBJECT_FILE_DIR_normal)|(SRCROOT)|(OBJROOT)' > Scripts/xcenv-tests.sh";
+			shellScript = "export | egrep '(BUILT_PRODUCTS_DIR)|(CURRENT_ARCH)|(OBJECT_FILE_DIR_normal)|(SRCROOT)|(OBJROOT)' > Scripts/xcenv-tests.sh\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -411,7 +410,11 @@
 			buildSettings = {
 				HEADER_SEARCH_PATHS = CPPTraits/include/;
 				INFOPLIST_FILE = "Unit-Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xs-labs.CPPTraits-Tests";
 				PRODUCT_NAME = "CPPTraits-Tests";
 			};
@@ -422,7 +425,11 @@
 			buildSettings = {
 				HEADER_SEARCH_PATHS = CPPTraits/include/;
 				INFOPLIST_FILE = "Unit-Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xs-labs.CPPTraits-Tests";
 				PRODUCT_NAME = "CPPTraits-Tests";
 			};
